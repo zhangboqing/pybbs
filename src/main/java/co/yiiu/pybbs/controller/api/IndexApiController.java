@@ -10,9 +10,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 
 import javax.servlet.http.HttpSession;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 /**
@@ -55,6 +57,9 @@ public class IndexApiController extends BaseApiController {
   // 处理登录的接口
   @PostMapping("/login")
   public Result login(@RequestBody Map<String, String> body, HttpSession session) {
+  //英语环境
+    session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.US);
+
     String username = body.get("username");
     String password = body.get("password");
     String captcha = body.get("captcha");
