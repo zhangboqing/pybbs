@@ -4,13 +4,13 @@
     <div class="col-md-9">
       <div class="card">
         <div class="card-header">
-          <a href="/">主页</a> / <a href="/topic/${topic.id}">${topic.title}</a> / 编辑评论
-          <a href="javascript:;" id="uploadImageBtn" class="pull-right">上传图片</a>
+          <a href="/">${i18n.getMessage("theme.default.comment.edit.1")}</a> / <a href="/topic/${topic.id}">${topic.title}</a> / ${i18n.getMessage("theme.default.comment.edit.2")}
+          <a href="javascript:;" id="uploadImageBtn" class="pull-right">${i18n.getMessage("theme.default.comment.edit.3")}</a>
         </div>
         <textarea name="content" id="content" class="form-control">${comment.content?html}</textarea>
         <div class="card-body">
           <button type="button" id="btn" class="btn btn-info">
-            <span class="glyphicon glyphicon-send"></span> 更新
+            <span class="glyphicon glyphicon-send"></span> ${i18n.getMessage("theme.default.comment.edit.4")}
           </button>
         </div>
       </div>

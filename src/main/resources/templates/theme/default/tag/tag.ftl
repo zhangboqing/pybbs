@@ -9,9 +9,9 @@
                 <img src="${tag.icon}" width="32" alt="">
               </#if>
               ${tag.name}
-            <small>共有${tag.topicCount!0}篇话题</small>
+            <small>${i18n.getMessage("theme.default.tag.tag.1")}${tag.topicCount!0}${i18n.getMessage("theme.default.tag.tag.2")}</small>
               <#if _user??>
-                <a href="/topic/create?tag=${tag.name}" class="btn btn-sm btn-info pull-right">发布话题</a>
+                <a href="/topic/create?tag=${tag.name}" class="btn btn-sm btn-info pull-right">${i18n.getMessage("theme.default.tag.tag.3")}</a>
               </#if>
           </h4>
           <small>${tag.description!}</small>

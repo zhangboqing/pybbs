@@ -13,17 +13,17 @@
                 <span>•</span>
               </#if>-->
               <#if topic.top == true>
-                <span class="badge badge-info">置顶</span>
+                <span class="badge badge-info">${i18n.getMessage("theme.default.components.topics.1")}</span>
                 <span>•</span>
               <#elseif topic.good == true>
-                <span class="badge badge-info">精华</span>
+                <span class="badge badge-info">${i18n.getMessage("theme.default.components.topics.2")}</span>
                 <span>•</span>
               </#if>
             <span><a href="/user/${topic.username!}">${topic.username!}</a></span>
             <span class="hidden-sm hidden-xs">•</span>
-            <span class="hidden-sm hidden-xs"><a href="/topic/${topic.id}">${topic.commentCount!0}个评论</a></span>
+            <span class="hidden-sm hidden-xs"><a href="/topic/${topic.id}">${topic.commentCount!0}${i18n.getMessage("theme.default.components.topics.3")}</a></span>
             <span class="hidden-sm hidden-xs">•</span>
-            <span class="hidden-sm hidden-xs">${topic.view!0}次浏览</span>
+            <span class="hidden-sm hidden-xs">${topic.view!0}${i18n.getMessage("theme.default.components.topics.4")}</span>
             <span>•</span>
             <span>${model.formatDate(topic.inTime)}</span>
               <#if tags && topic.tags??>

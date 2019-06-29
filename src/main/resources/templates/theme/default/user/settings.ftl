@@ -6,23 +6,23 @@
           <div class="alert alert-danger">
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
                   aria-hidden="true">&times;</span></button>
-            <strong>你的帐号还没有激活，请进入邮箱点击激活邮箱中的链接进行激活 或者 <a href="javascript:;" id="sendActiveEmail">重新发送</a> 激活链接</strong>
+            <strong>${i18n.getMessage("theme.default.user.settings.1")} <a href="javascript:;" id="sendActiveEmail">${i18n.getMessage("theme.default.user.settings.2")}</a> ${i18n.getMessage("theme.default.user.settings.3")}</strong>
           </div>
         </#if>
       <div class="card">
-        <div class="card-header">设置</div>
+        <div class="card-header">${i18n.getMessage("theme.default.user.settings.4")}</div>
         <div class="card-body">
           <br>
           <form class="form-horizontal" onsubmit="return;">
             <div class="form-group row">
-              <label for="username" class="col-sm-2 control-label">用户名</label>
+              <label for="username" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.5")}</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="username" name="username" disabled value="${user.username}"
                        placeholder="用户名">
               </div>
             </div>
             <div class="form-group row">
-              <label for="telegramName" class="col-sm-2 control-label">Telegram用户名</label>
+              <label for="telegramName" class="col-sm-2 control-label">Telegram${i18n.getMessage("theme.default.user.settings.5")}</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="telegramName" name="telegramName"
                        value="${user.telegramName!}"
@@ -30,14 +30,14 @@
               </div>
             </div>
             <div class="form-group row">
-              <label for="website" class="col-sm-2 control-label">个人主页</label>
+              <label for="website" class="col-sm-2 control-label">个人主页${i18n.getMessage("theme.default.user.settings.6")}</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="website" name="website" value="${user.website!}"
                        placeholder="个人主页">
               </div>
             </div>
             <div class="form-group row">
-              <label for="bio" class="col-sm-2 control-label">个人简介</label>
+              <label for="bio" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.7")}</label>
               <div class="col-sm-10">
               <textarea name="bio" id="bio" rows="3" class="form-control"
                         placeholder="个人简介">${user.bio!?html}</textarea>
@@ -48,7 +48,7 @@
                 <div class="checkbox">
                   <label>
                     <input type="checkbox" id="emailNotification" <#if user.emailNotification>checked</#if>>
-                    有新消息发送邮件
+                    ${i18n.getMessage("theme.default.user.settings.8")}
                   </label>
                 </div>
                   <#--<div class="checkbox">
@@ -60,56 +60,56 @@
             </div>
             <div class="form-group row">
               <div class="offset-sm-2 col-sm-10">
-                <button type="button" id="settings_btn" class="btn btn-info">提交</button>
+                <button type="button" id="settings_btn" class="btn btn-info">${i18n.getMessage("theme.default.user.settings.9")}</button>
               </div>
             </div>
           </form>
         </div>
       </div>
       <div class="card">
-        <div class="card-header">修改邮箱</div>
+        <div class="card-header">${i18n.getMessage("theme.default.user.settings.10")}</div>
         <div class="card-body">
           <form onsubmit="return;" class="form-horizontal">
             <div class="form-group row">
-              <label for="email" class="col-sm-2 control-label">邮箱</label>
+              <label for="email" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.11")}</label>
               <div class="col-sm-10">
                 <div class="input-group">
                   <input type="email" name="email" id="email" class="form-control" value="${user.email!}"
                          placeholder="邮箱"/>
                   <span class="input-group-append">
                   <button type="button" id="sendEmailCode" class="btn btn-info" autocomplete="off"
-                          data-loading-text="发送中...">发送验证码</button>
+                          data-loading-text="发送中...">${i18n.getMessage("theme.default.user.settings.12")}</button>
                 </span>
                 </div>
               </div>
             </div>
             <div class="form-group row">
-              <label for="code" class="col-sm-2 control-label">验证码</label>
+              <label for="code" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.13")}</label>
               <div class="col-sm-10">
                 <input type="text" name="code" id="code" class="form-control" placeholder="验证码"/>
               </div>
             </div>
             <div class="form-group row">
               <div class="offset-sm-2 col-sm-10">
-                <button type="button" id="settings_email_btn" class="btn btn-info">更改邮箱</button>
+                <button type="button" id="settings_email_btn" class="btn btn-info">${i18n.getMessage("theme.default.user.settings.14")}</button>
               </div>
             </div>
           </form>
         </div>
       </div>
       <div class="card">
-        <div class="card-header">修改头像</div>
+        <div class="card-header">${i18n.getMessage("theme.default.user.settings.15")}</div>
         <div class="card-body">
           <form onsubmit="return;" class="form-horizontal">
             <div class="form-group row">
-              <label for="" class="col-sm-2 control-label" style="vertical-align: middle">当前头像</label>
+              <label for="" class="col-sm-2 control-label" style="vertical-align: middle">${i18n.getMessage("theme.default.user.settings.16")}</label>
               <div class="col-sm-10">
                 <img src="${user.avatar!}" class="avatar avatar-lg" alt="avatar"/>&nbsp;&nbsp;
                 <img src="${user.avatar!}" class="avatar" style="vertical-align: bottom" alt="avatar"/>&nbsp;&nbsp;
                 <img src="${user.avatar!}" class="avatar avatar-sm" style="vertical-align: bottom" alt="avatar"/>
               </div>
               <div class="offset-sm-2 col-sm-10" style="margin-top: 10px;">
-                <a href="javascript:;" id="selectAvatar">上传新头像</a>
+                <a href="javascript:;" id="selectAvatar">${i18n.getMessage("theme.default.user.settings.17")}</a>
                 <input type="file" class="d-none" name="file" id="file"/>
               </div>
             </div>
@@ -117,24 +117,24 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-header">修改密码</div>
+        <div class="card-header">${i18n.getMessage("theme.default.user.settings.18")}</div>
         <div class="card-body">
           <form onsubmit="return;" class="form-horizontal">
             <div class="form-group row">
-              <label for="oldPassword" class="col-sm-2 control-label">旧密码</label>
+              <label for="oldPassword" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.19")}</label>
               <div class="col-sm-10">
                 <input type="password" name="oldPassword" id="oldPassword" class="form-control" placeholder="旧密码"/>
               </div>
             </div>
             <div class="form-group row">
-              <label for="newPassword" class="col-sm-2 control-label">新密码</label>
+              <label for="newPassword" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.20")}</label>
               <div class="col-sm-10">
                 <input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="新密码"/>
               </div>
             </div>
             <div class="form-group row">
               <div class="offset-sm-2 col-sm-10">
-                <button type="button" id="settings_pwd_btn" class="btn btn-info">更改密码</button>
+                <button type="button" id="settings_pwd_btn" class="btn btn-info">${i18n.getMessage("theme.default.user.settings.21")}</button>
               </div>
             </div>
           </form>

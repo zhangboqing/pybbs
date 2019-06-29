@@ -1,7 +1,7 @@
 <div class="card">
   <div class="card-header">
-    用户Token
-    <a href="javascript:;" id="refreshToken" class="pull-right">刷新Token</a>
+    ${i18n.getMessage("theme.default.components.token.1")}
+    <a href="javascript:;" id="refreshToken" class="pull-right">${i18n.getMessage("theme.default.components.token.2")}</a>
   </div>
   <div class="card-body">
     <p>Token：<code id="userToken">${_user.token}</code></p>

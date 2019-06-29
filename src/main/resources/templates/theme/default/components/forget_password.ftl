@@ -1,13 +1,13 @@
 <div class="card d-none" id="email_forget_password_div">
-  <div class="card-header">找回密码</div>
+  <div class="card-header">${i18n.getMessage("theme.default.components.forget_password.1")}</div>
   <div class="card-body">
     <form action="" onsubmit="return;">
       <div class="form-group">
-        <label for="email">邮箱</label>
+        <label for="email">${i18n.getMessage("theme.default.components.forget_password.2")}</label>
         <input type="email" id="email" name="email" class="form-control" placeholder="邮箱"/>
       </div>
       <div class="form-group">
-        <label for="captcha">验证码</label>
+        <label for="captcha">${i18n.getMessage("theme.default.components.forget_password.3")}</label>
         <div class="input-group">
           <input type="text" class="form-control" id="forget_password_captcha" name="captcha" placeholder="验证码"/>
           <span class="input-group-append">
@@ -16,20 +16,20 @@
         </div>
       </div>
       <div class="form-group">
-        <button type="button" id="email_forget_password" onclick="email_forget_password()" class="btn btn-info">找回密码
+        <button type="button" id="email_forget_password" onclick="email_forget_password()" class="btn btn-info">${i18n.getMessage("theme.default.components.forget_password.7")}
         </button>
         <i class="fa fa-question-circle" data-toggle="tooltip" data-placement="right" title=""
-           data-original-title="手机号登录系统会判断手机号是否注册过，如果没有注册过，会创建帐号"></i>
+           data-original-title="${i18n.getMessage("theme.default.components.forget_password.4")}"></i>
       </div>
     </form>
       <#if !model.isEmpty(site.oauth_github_client_id!) || !model.isEmpty(site.sms_access_key_id!)>
         <hr>
       </#if>
       <#if !model.isEmpty(site.oauth_github_client_id!)>
-        <a href="/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;通过Github登录/注册</a>
+        <a href="/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;${i18n.getMessage("theme.default.components.forget_password.5")}</a>
       </#if>
       <#if !model.isEmpty(site.sms_access_key_id!)>
-        <button class="btn btn-primary btn-block" id="mobile_login_btn"><i class="fa fa-mobile"></i>&nbsp;&nbsp;通过手机号登录/注册
+        <button class="btn btn-primary btn-block" id="mobile_login_btn"><i class="fa fa-mobile"></i>&nbsp;&nbsp;${i18n.getMessage("theme.default.components.forget_password.6")}
         </button>
       </#if>
   </div>

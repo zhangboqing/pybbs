@@ -3,16 +3,16 @@
   <div class="row">
     <div class="col-md-9">
       <div class="card">
-        <div class="card-header">发布话题</div>
+        <div class="card-header">${i18n.getMessage("theme.default.topic.create.1")}</div>
         <div class="card-body">
           <form action="" onsubmit="return;" id="form">
             <div class="form-group">
-              <label for="title">标题</label>
+              <label for="title">${i18n.getMessage("theme.default.topic.create.2")}</label>
               <input type="text" name="title" id="title" class="form-control" placeholder="标题"/>
             </div>
             <div class="form-group">
-              <label for="content">内容</label>
-              <a href="javascript:;" id="uploadImageBtn" class="pull-right">上传图片</a>
+              <label for="content">${i18n.getMessage("theme.default.topic.create.3")}</label>
+              <a href="javascript:;" id="uploadImageBtn" class="pull-right">${i18n.getMessage("theme.default.topic.create.4")}</a>
               <textarea name="content" id="content" class="form-control"
                         placeholder="内容，支持Markdown语法"></textarea>
             </div>
@@ -22,7 +22,7 @@
                        placeholder="标签, 多个标签以 英文逗号 隔开"/>
               </div>-->
             <div class="form-group">
-              <button type="button" id="btn" class="btn btn-info">发布话题</button>
+              <button type="button" id="btn" class="btn btn-info">${i18n.getMessage("theme.default.topic.create.5")}</button>
             </div>
           </form>
         </div>

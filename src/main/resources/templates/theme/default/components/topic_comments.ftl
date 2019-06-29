@@ -1,10 +1,10 @@
 <#macro topic_comments topicId>
     <@tag_topic_comments topicId=topicId>
         <#if comments?size == 0>
-          <div class="nocomment-tip">目前还没有评论</div>
+          <div class="nocomment-tip">${i18n.getMessage("theme.default.components.topic_comments.1")}</div>
         <#else>
           <div class="card">
-            <div class="card-header">共 ${comments?size} 条评论</div>
+            <div class="card-header">${i18n.getMessage("theme.default.components.topic_comments.2")} ${comments?size} ${i18n.getMessage("theme.default.components.topic_comments.3")}</div>
             <div class="card-body">
                 <#list comments as comment>
                   <div class="media" id="comment${comment.id}" style="padding-left: ${comment.layer * 30}px;">
@@ -16,7 +16,7 @@
                           </a>
                           <a href="/user/${comment.username!}">${comment.username!} </a>
                             <#if topicUser?? && topicUser.id == comment.userId>
-                              <span class="text-success">[楼主]</span>
+                              <span class="text-success">[${i18n.getMessage("theme.default.components.topic_comments.4")}]</span>
                             </#if>
                             ${model.formatDate(comment.inTime)}
                         </div>

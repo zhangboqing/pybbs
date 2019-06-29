@@ -8,12 +8,12 @@
             <img src="${user.avatar!}" class="mr-3 avatar avatar-lg" alt="avatar"/>
             <div class="media-body">
               <h3 style="margin-top: 0">${user.username!}</h3>
-              <div>积分：<a href="/top100">${user.score}</a></div>
+              <div>${i18n.getMessage("theme.default.user.profile.1")}：<a href="/top100">${user.score}</a></div>
                 <#if user.bio??>
                   <div><i class="gray">${user.bio!}</i></div>
                 </#if>
-              <div>收藏话题: <a href="/user/${user.username}/collects">${collectCount!0}</a></div>
-              <div>入驻时间: ${model.formatDate(user.inTime)}</div>
+              <div>${i18n.getMessage("theme.default.user.profile.2")}: <a href="/user/${user.username}/collects">${collectCount!0}</a></div>
+              <div>${i18n.getMessage("theme.default.user.profile.3")}: ${model.formatDate(user.inTime)}</div>
             </div>
           </div>
         </div>

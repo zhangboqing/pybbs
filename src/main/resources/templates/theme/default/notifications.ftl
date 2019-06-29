@@ -4,8 +4,8 @@
     <div class="col-md-9">
       <div class="card">
         <div class="card-header">
-          新消息
-          <a id="markRead" href="javascript:markRead()" class="pull-right" style="display: none">标记已读</a>
+          ${i18n.getMessage("theme.default.notifications.1")}
+          <a id="markRead" href="javascript:markRead()" class="pull-right" style="display: none">${i18n.getMessage("theme.default.notifications.2")}</a>
         </div>
         <div class="card-body">
             <#include "components/notification.ftl"/>
@@ -13,7 +13,7 @@
         </div>
       </div>
       <div class="card">
-        <div class="card-header">已读消息</div>
+        <div class="card-header">${i18n.getMessage("theme.default.notifications.3")}</div>
         <div class="card-body">
             <#include "components/notification.ftl"/>
             <@notification userId=_user.id read=1 limit=20/>

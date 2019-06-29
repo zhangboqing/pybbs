@@ -1,7 +1,7 @@
 <#macro score limit top100=false>
   <div class="card">
     <div class="card-header">
-      积分榜
+      ${i18n.getMessage("theme.default.components.score.1")}
         <#if !top100>
           <span class="pull-right"><a href="/top100">Top100</a></span>
         </#if>
@@ -9,8 +9,8 @@
     <table class="table">
         <#if top100>
           <tr>
-            <th>用户名</th>
-            <th>积分</th>
+            <th>${i18n.getMessage("theme.default.components.score.2")}</th>
+            <th>${i18n.getMessage("theme.default.components.score.3")}</th>
           </tr>
         </#if>
         <@tag_score limit=limit>

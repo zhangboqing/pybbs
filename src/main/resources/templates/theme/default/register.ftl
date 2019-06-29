@@ -4,23 +4,23 @@
     <div class="col-md-3 d-none d-md-block"></div>
     <div class="col-md-6">
       <div class="card" id="local_register_div">
-        <div class="card-header">注册</div>
+        <div class="card-header">${i18n.getMessage("theme.default.register.1")}</div>
         <div class="card-body">
           <form action="" onsubmit="return;" id="form">
             <div class="form-group">
-              <label for="username">用户名</label>
+              <label for="username">${i18n.getMessage("theme.default.register.2")}</label>
               <input type="text" id="username" name="username" class="form-control" placeholder="用户名"/>
             </div>
             <div class="form-group">
-              <label for="password">密码</label>
+              <label for="password">${i18n.getMessage("theme.default.register.3")}</label>
               <input type="password" id="password" name="password" class="form-control" placeholder="密码"/>
             </div>
             <div class="form-group">
-              <label for="email">邮箱</label>
+              <label for="email">${i18n.getMessage("theme.default.register.4")}</label>
               <input type="email" id="email" name="email" class="form-control" placeholder="邮箱"/>
             </div>
             <div class="form-group">
-              <label for="captcha">验证码</label>
+              <label for="captcha">${i18n.getMessage("theme.default.register.5")}</label>
               <div class="input-group">
                 <input type="text" class="form-control" id="captcha" name="captcha" placeholder="验证码"/>
                 <span class="input-group-append">
@@ -29,7 +29,7 @@
               </div>
             </div>
             <div class="form-group">
-              <button type="button" id="register_btn" class="btn btn-info">注册</button>
+              <button type="button" id="register_btn" class="btn btn-info">${i18n.getMessage("theme.default.register.6")}</button>
             </div>
           </form>
             <#if !model.isEmpty(site.oauth_github_client_id!)
@@ -38,13 +38,13 @@
               <hr>
             </#if>
             <#if !model.isEmpty(site.oauth_github_client_id!)>
-              <a href="/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;通过Github登录/注册</a>
+              <a href="/oauth/github" class="btn btn-success btn-block"><i class="fa fa-github"></i>&nbsp;&nbsp;${i18n.getMessage("theme.default.register.7")}</a>
             </#if>
             <#if !model.isEmpty(site.oauth_wechat_client_id!)>
-              <a href="/oauth/wechat" class="btn btn-success btn-block"><i class="fa fa-wechat"></i>&nbsp;&nbsp;通过微信登录/注册</a>
+              <a href="/oauth/wechat" class="btn btn-success btn-block"><i class="fa fa-wechat"></i>&nbsp;&nbsp;${i18n.getMessage("theme.default.register.8")}</a>
             </#if>
             <#if !model.isEmpty(site.sms_access_key_id!)>
-              <button class="btn btn-primary btn-block" id="mobile_login_btn"><i class="fa fa-mobile"></i>&nbsp;&nbsp;通过手机号登录/注册
+              <button class="btn btn-primary btn-block" id="mobile_login_btn"><i class="fa fa-mobile"></i>&nbsp;&nbsp;${i18n.getMessage("theme.default.register.9")}
               </button>
             </#if>
         </div>

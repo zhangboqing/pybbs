@@ -22,22 +22,22 @@
                 <span id="vote_topic_count_${topic.id}">${model.getUpIds(topic.upIds)?size}</span>
                 <span>•</span>
                   <#if topic.top == true>
-                    <span class="badge badge-info">置顶</span>
+                    <span class="badge badge-info">${i18n.getMessage("theme.default.topic.detail.1")}</span>
                     <span>•</span>
                   <#elseif topic.good == true>
-                    <span class="badge badge-info">精华</span>
+                    <span class="badge badge-info">${i18n.getMessage("theme.default.topic.detail.2")}</span>
                     <span>•</span>
                   </#if>
                 <span><a href="/user/${topicUser.username!}">${topicUser.username!}</a></span>
                 <span>•</span>
                 <span>${model.formatDate(topic.inTime)}</span>
                 <span>•</span>
-                <span>${topic.view!1}次点击</span>
+                <span>${topic.view!1}${i18n.getMessage("theme.default.topic.detail.3")}</span>
                   <#if _user?? && topic.userId == _user.id>
                     <span>•</span>
-                    <span><a href="/topic/edit/${topic.id}">编辑</a></span>
+                    <span><a href="/topic/edit/${topic.id}">${i18n.getMessage("theme.default.topic.detail.4")}</a></span>
                     <span>•</span>
-                    <span><a href="javascript:;" id="deleteTopic">删除</a></span>
+                    <span><a href="javascript:;" id="deleteTopic">${i18n.getMessage("theme.default.topic.detail.5")}</a></span>
                   </#if>
               </p>
             </div>
@@ -57,13 +57,13 @@
         </div>
           <#if _user??>
             <div class="card-footer">
-              <a href="javascript:window.open('http://service.weibo.com/share/share.php?url=${site.base_url!}/topic/${topic.id}?r=${_user.username!}&title=${topic.title!?html}', '_blank', 'width=550,height=370'); recordOutboundLink(this, 'Share', 'weibo.com');">分享微博</a>&nbsp;
+              <a href="javascript:window.open('http://service.weibo.com/share/share.php?url=${site.base_url!}/topic/${topic.id}?r=${_user.username!}&title=${topic.title!?html}', '_blank', 'width=550,height=370'); recordOutboundLink(this, 'Share', 'weibo.com');">${i18n.getMessage("theme.default.topic.detail.6")}</a>&nbsp;
                 <#if collect??>
-                  <a href="javascript:;" class="collectTopic">取消收藏</a>
+                  <a href="javascript:;" class="collectTopic">${i18n.getMessage("theme.default.topic.detail.7")}</a>
                 <#else>
-                  <a href="javascript:;" class="collectTopic">加入收藏</a>
+                  <a href="javascript:;" class="collectTopic">${i18n.getMessage("theme.default.topic.detail.8")}</a>
                 </#if>
-              <span class="pull-right"><span id="collectCount">${collects?size}</span>个收藏</span>
+              <span class="pull-right"><span id="collectCount">${collects?size}</span>${i18n.getMessage("theme.default.topic.detail.9")}</span>
             </div>
           </#if>
       </div>
@@ -75,17 +75,17 @@
         <#if _user??>
           <div class="card">
             <div class="card-header">
-              添加一条新评论
+              ${i18n.getMessage("theme.default.topic.detail.10")}
               <span class="pull-right">
-            <a href="javascript:;" id="uploadImageBtn">上传图片</a>&nbsp;|
-            <a href="javascript:;" id="goTop">回到顶部</a>
+            <a href="javascript:;" id="uploadImageBtn">${i18n.getMessage("theme.default.topic.detail.11")}</a>&nbsp;|
+            <a href="javascript:;" id="goTop">${i18n.getMessage("theme.default.topic.detail.12")}</a>
           </span>
             </div>
             <input type="hidden" name="commentId" id="commentId" value=""/>
             <textarea name="content" id="content" class="form-control" placeholder="添加一条评论，支持Markdown语法"></textarea>
             <div class="card-body">
               <button id="comment_btn" class="btn btn-sm btn-info">
-                <span class="glyphicon glyphicon-send"></span> 评论
+                <span class="glyphicon glyphicon-send"></span> ${i18n.getMessage("theme.default.topic.detail.13")}
               </button>
             </div>
           </div>
