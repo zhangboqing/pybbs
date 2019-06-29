@@ -66,11 +66,11 @@
                           if (data.code === 200) {
                             var voteIcon = $("#vote_icon_" + id);
                             if (voteIcon.hasClass("fa-thumbs-up")) {
-                              suc("取消点赞成功");
+                              suc("${i18n.getMessage('theme.default.components.topic_comments.5')}");
                               voteIcon.removeClass("fa-thumbs-up");
                               voteIcon.addClass("fa-thumbs-o-up");
                             } else {
-                              suc("点赞成功");
+                              suc("${i18n.getMessage('theme.default.components.topic_comments.6')}");
                               voteIcon.addClass("fa-thumbs-up");
                               voteIcon.removeClass("fa-thumbs-o-up");
                             }

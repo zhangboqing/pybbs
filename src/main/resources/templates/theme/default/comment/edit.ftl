@@ -45,7 +45,7 @@
       $("#btn").click(function () {
         var content = window.editor.getDoc().getValue();
         if (!content) {
-          err("请输入内容");
+          err("${i18n.getMessage('theme.default.comment.edit.3')}");
           return;
         }
         $.ajax({
@@ -63,7 +63,7 @@
           }),
           success: function (data) {
             if (data.code === 200) {
-              suc("更新成功");
+              suc("${i18n.getMessage('theme.default.comment.edit.3')}");
               setTimeout(function () {
                 window.location.href = "/topic/${comment.topicId}";
               }, 700);

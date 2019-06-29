@@ -9,16 +9,16 @@
           <form action="" onsubmit="return;">
             <div class="form-group">
               <label for="username">${i18n.getMessage("theme.default.login.2")}</label>
-              <input type="text" id="username" name="username" class="form-control" placeholder="用户名"/>
+              <input type="text" id="username" name="username" class="form-control" placeholder="${i18n.getMessage("theme.default.login.2")}"/>
             </div>
             <div class="form-group">
               <label for="password">${i18n.getMessage("theme.default.login.3")}</label>
-              <input type="password" id="password" name="password" class="form-control" placeholder="密码"/>
+              <input type="password" id="password" name="password" class="form-control" placeholder="${i18n.getMessage("theme.default.login.3")}"/>
             </div>
             <div class="form-group">
               <label for="captcha">${i18n.getMessage("theme.default.login.4")}</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="验证码"/>
+                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="${i18n.getMessage("theme.default.login.4")}"/>
                 <span class="input-group-append">
                   <img style="border: 1px solid #ccc;" src="" class="captcha" id="changeCaptcha"/>
                 </span>
@@ -65,15 +65,15 @@
         var password = $("#password").val();
         var captcha = $("#captcha").val();
         if (!username) {
-          err('请输入用户名');
+          err('${i18n.getMessage("theme.default.login.8")}');
           return;
         }
         if (!password) {
-          err('请输入密码');
+          err('${i18n.getMessage("theme.default.login.9")}');
           return;
         }
         if (!captcha) {
-          err('请输入验证码');
+          err('${i18n.getMessage("theme.default.login.10")}');
           return;
         }
         $.ajax({
@@ -89,7 +89,7 @@
           }),
           success: function (data) {
             if (data.code === 200) {
-              suc("登录成功");
+              suc("${i18n.getMessage('theme.default.login.11')}");
               setTimeout(function () {
                 window.location.href = "/";
               }, 700);

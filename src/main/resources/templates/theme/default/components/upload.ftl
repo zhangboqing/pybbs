@@ -21,7 +21,7 @@
       contentType: false,
       success: function (data) {
         if (data.code === 200) {
-          suc("上传成功");
+          suc("${i18n.getMessage('theme.default.components.upload.1')}");
           var oldContent = window.editor.getDoc().getValue();
           if (oldContent) oldContent += '\n\n';
           window.editor.getDoc().setValue(oldContent + "![image](" + data.detail + ")");

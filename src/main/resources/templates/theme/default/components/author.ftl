@@ -15,7 +15,7 @@
       </div>
     </div>
     <div style="color: #7A7A7A; font-size: 12px;margin-top:5px;">
-      <i>${(topicUser.bio!"${i18n.getMessage("theme.default.components.author.3")}")?html}</i>
+      <i>${(topicUser.bio!"")?html}${i18n.getMessage("theme.default.components.author.3")}</i>
     </div>
   </div>
 </div>

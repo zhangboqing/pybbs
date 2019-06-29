@@ -1,7 +1,7 @@
 <#macro user_comments pageNo pageSize username isPaginate=false isFooter=false>
   <div class="card">
       <@tag_user_comments username=username pageNo=pageNo pageSize=pageSize>
-        <div class="card-header">${username}评论的话题${i18n.getMessage("theme.default.components.user_comments.1")}</div>
+        <div class="card-header">${username} ${i18n.getMessage("theme.default.components.user_comments.1")}</div>
           <#if comments.total == 0>
             <div class="card-body">
               ${i18n.getMessage("theme.default.components.user_comments.2")}

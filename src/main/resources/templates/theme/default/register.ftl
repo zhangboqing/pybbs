@@ -9,20 +9,20 @@
           <form action="" onsubmit="return;" id="form">
             <div class="form-group">
               <label for="username">${i18n.getMessage("theme.default.register.2")}</label>
-              <input type="text" id="username" name="username" class="form-control" placeholder="用户名"/>
+              <input type="text" id="username" name="username" class="form-control" placeholder="${i18n.getMessage("theme.default.register.2")}"/>
             </div>
             <div class="form-group">
               <label for="password">${i18n.getMessage("theme.default.register.3")}</label>
-              <input type="password" id="password" name="password" class="form-control" placeholder="密码"/>
+              <input type="password" id="password" name="password" class="form-control" placeholder="${i18n.getMessage("theme.default.register.3")}"/>
             </div>
             <div class="form-group">
               <label for="email">${i18n.getMessage("theme.default.register.4")}</label>
-              <input type="email" id="email" name="email" class="form-control" placeholder="邮箱"/>
+              <input type="email" id="email" name="email" class="form-control" placeholder="${i18n.getMessage("theme.default.register.4")}"/>
             </div>
             <div class="form-group">
               <label for="captcha">${i18n.getMessage("theme.default.register.5")}</label>
               <div class="input-group">
-                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="验证码"/>
+                <input type="text" class="form-control" id="captcha" name="captcha" placeholder="${i18n.getMessage("theme.default.register.5")}"/>
                 <span class="input-group-append">
                 <img style="border: 1px solid #ccc;" src="" class="captcha" id="changeCaptcha"/>
               </span>
@@ -68,19 +68,19 @@
         var email = $("#email").val();
         var captcha = $("#captcha").val();
         if (!username) {
-          err("请输入用户名");
+          err("${i18n.getMessage('theme.default.register.10')}");
           return;
         }
         if (!password) {
-          err("请输入密码");
+          err("${i18n.getMessage('theme.default.register.11')}");
           return;
         }
         if (!email) {
-          err("请输入邮箱");
+          err("${i18n.getMessage('theme.default.register.12')}");
           return;
         }
         if (!captcha) {
-          err("请输入验证码");
+          err("${i18n.getMessage('theme.default.register.13')}");
           return;
         }
         $.ajax({
@@ -97,7 +97,7 @@
           }),
           success: function (data) {
             if (data.code === 200) {
-              suc("注册成功");
+              suc("${i18n.getMessage('theme.default.register.14')}");
               setTimeout(function () {
                 window.location.href = "/";
               }, 700);

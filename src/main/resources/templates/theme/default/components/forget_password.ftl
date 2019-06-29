@@ -4,12 +4,12 @@
     <form action="" onsubmit="return;">
       <div class="form-group">
         <label for="email">${i18n.getMessage("theme.default.components.forget_password.2")}</label>
-        <input type="email" id="email" name="email" class="form-control" placeholder="邮箱"/>
+        <input type="email" id="email" name="email" class="form-control" placeholder="${i18n.getMessage("theme.default.components.forget_password.2")}"/>
       </div>
       <div class="form-group">
         <label for="captcha">${i18n.getMessage("theme.default.components.forget_password.3")}</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="forget_password_captcha" name="captcha" placeholder="验证码"/>
+          <input type="text" class="form-control" id="forget_password_captcha" name="captcha" placeholder="${i18n.getMessage("theme.default.components.forget_password.3")}"/>
           <span class="input-group-append">
                 <img style="border: 1px solid #ccc;" src="" class="captcha" id="emailCaptcha"/>
               </span>
@@ -39,11 +39,11 @@
     var email = $("#email").val();
     var captcha = $("#email_captcha").val();
     if (!email) {
-      err("请输入邮箱");
+      err("${i18n.getMessage('theme.default.components.forget_password.8')}");
       return;
     }
     if (!captcha) {
-      err("请输入验证码");
+      err("${i18n.getMessage('theme.default.components.forget_password.9')}");
       return;
     }
     $.ajax({
@@ -58,7 +58,7 @@
       }),
       success: function (data) {
         if (data.code === 200) {
-          suc("邮件发送成功");
+          suc("${i18n.getMessage('theme.default.components.forget_password.10')}");
           setTimeout(function () {
             window.location.href = "/";
           }, 700);

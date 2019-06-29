@@ -8,13 +8,13 @@
           <form action="" onsubmit="return;" id="form">
             <div class="form-group">
               <label for="title">${i18n.getMessage("theme.default.topic.create.2")}</label>
-              <input type="text" name="title" id="title" class="form-control" placeholder="标题"/>
+              <input type="text" name="title" id="title" class="form-control" placeholder="${i18n.getMessage("theme.default.topic.create.2")}"/>
             </div>
             <div class="form-group">
               <label for="content">${i18n.getMessage("theme.default.topic.create.3")}</label>
               <a href="javascript:;" id="uploadImageBtn" class="pull-right">${i18n.getMessage("theme.default.topic.create.4")}</a>
               <textarea name="content" id="content" class="form-control"
-                        placeholder="内容，支持Markdown语法"></textarea>
+                        placeholder="${i18n.getMessage("theme.default.topic.create.6")}"></textarea>
             </div>
               <#--<div class="form-group">
                 <label for="tags">标签</label>
@@ -56,7 +56,7 @@
         var content = window.editor.getDoc().getValue();
         // var tags = $("#tags").val();
         if (!title || title.length > 120) {
-          err("请输入标题，且最大长度在120个字符以内");
+          err("${i18n.getMessage('theme.default.topic.create.7')}");
           return;
         }
         // if (!tags || tags.split(",").length > 5) {
@@ -82,7 +82,7 @@
           }),
           success: function (data) {
             if (data.code === 200) {
-              suc("创建成功");
+              suc("${i18n.getMessage('theme.default.topic.create.8')}");
               setTimeout(function () {
                 window.location.href = "/topic/" + data.detail.id
               }, 700);

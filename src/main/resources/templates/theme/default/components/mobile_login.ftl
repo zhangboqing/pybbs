@@ -5,7 +5,7 @@
       <div class="form-group">
         <label for="mobile">${i18n.getMessage("theme.default.components.mobile_login.ftl.2")}</label>
         <div class="input-group">
-          <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="手机号"/>
+          <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="${i18n.getMessage("theme.default.components.mobile_login.ftl.2")}"/>
           <span class="input-group-append">
             <button type="button" class="btn btn-default" onclick="send_sms_code()"
                     id="send_sms_code_btn">${i18n.getMessage("theme.default.components.mobile_login.ftl.3")}</button>
@@ -14,12 +14,12 @@
       </div>
       <div class="form-group">
         <label for="code">${i18n.getMessage("theme.default.components.mobile_login.ftl.4")}</label>
-        <input type="text" id="code" name="code" class="form-control" placeholder="手机验证码"/>
+        <input type="text" id="code" name="code" class="form-control" placeholder="${i18n.getMessage("theme.default.components.mobile_login.ftl.4")}"/>
       </div>
       <div class="form-group">
         <label for="captcha">${i18n.getMessage("theme.default.components.mobile_login.ftl.5")}</label>
         <div class="input-group">
-          <input type="text" class="form-control" id="mobile_captcha" name="captcha" placeholder="验证码"/>
+          <input type="text" class="form-control" id="mobile_captcha" name="captcha" placeholder="${i18n.getMessage("theme.default.components.mobile_login.ftl.5")}"/>
           <span class="input-group-append">
             <img style="border: 1px solid #ccc;" src="" class="captcha" id="mobileCaptcha"/>
           </span>
@@ -49,11 +49,11 @@
     var mobile = $("#mobile").val();
     var captcha = $("#mobile_captcha").val();
     if (!mobile) {
-      err("请输入手机号");
+      err("${i18n.getMessage('theme.default.components.mobile_login.ftl.10')}");
       return;
     }
     if (!captcha) {
-      err("请输入验证码");
+      err("${i18n.getMessage('theme.default.components.mobile_login.ftl.11')}");
       return;
     }
     if (count < 60) return;
@@ -75,11 +75,11 @@
             if (count <= 0) {
               count = 60;
               $("#send_sms_code_btn").attr('disabled', false);
-              $("#send_sms_code_btn").text('获取验证码');
+              $("#send_sms_code_btn").text('${i18n.getMessage("theme.default.components.mobile_login.ftl.3")}');
               clearInterval(interval);
             }
           }, 1000);
-          suc("发送成功");
+          suc("${i18n.getMessage('theme.default.components.mobile_login.ftl.12')}");
         } else {
           $("#send_sms_code_btn").attr('disabled', false);
           err(data.description);
@@ -94,15 +94,15 @@
     var code = $("#code").val();
     var captcha = $("#mobile_captcha").val();
     if (!mobile) {
-      err("请输入手机号");
+      err("${i18n.getMessage('theme.default.components.mobile_login.ftl.10')}");
       return;
     }
     if (!code) {
-      err("请输入手机验证码");
+      err("${i18n.getMessage('theme.default.components.mobile_login.ftl.13')}");
       return;
     }
     if (!captcha) {
-      err("请输入验证码");
+      err("${i18n.getMessage('theme.default.components.mobile_login.ftl.11')}");
       return;
     }
     $.ajax({
@@ -118,7 +118,7 @@
       }),
       success: function (data) {
         if (data.code === 200) {
-          suc("登录成功");
+          suc("${i18n.getMessage('theme.default.components.mobile_login.ftl.14')}");
           setTimeout(function () {
             window.location.href = "/";
           }, 700);

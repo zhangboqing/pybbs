@@ -22,25 +22,25 @@
               </div>
             </div>
             <div class="form-group row">
-              <label for="telegramName" class="col-sm-2 control-label">Telegram${i18n.getMessage("theme.default.user.settings.5")}</label>
+              <label for="telegramName" class="col-sm-2 control-label">Telegram ${i18n.getMessage("theme.default.user.settings.5")}</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="telegramName" name="telegramName"
                        value="${user.telegramName!}"
-                       placeholder="Telegram用户名">
+                       placeholder="Telegram ${i18n.getMessage("theme.default.user.settings.5")}">
               </div>
             </div>
             <div class="form-group row">
-              <label for="website" class="col-sm-2 control-label">个人主页${i18n.getMessage("theme.default.user.settings.6")}</label>
+              <label for="website" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.6")}</label>
               <div class="col-sm-10">
                 <input type="text" class="form-control" id="website" name="website" value="${user.website!}"
-                       placeholder="个人主页">
+                       placeholder="${i18n.getMessage("theme.default.user.settings.6")}">
               </div>
             </div>
             <div class="form-group row">
               <label for="bio" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.7")}</label>
               <div class="col-sm-10">
               <textarea name="bio" id="bio" rows="3" class="form-control"
-                        placeholder="个人简介">${user.bio!?html}</textarea>
+                        placeholder="${i18n.getMessage("theme.default.user.settings.7")}">${user.bio!?html}</textarea>
               </div>
             </div>
             <div class="form-group row">
@@ -75,7 +75,7 @@
               <div class="col-sm-10">
                 <div class="input-group">
                   <input type="email" name="email" id="email" class="form-control" value="${user.email!}"
-                         placeholder="邮箱"/>
+                         placeholder="${i18n.getMessage("theme.default.user.settings.11")}"/>
                   <span class="input-group-append">
                   <button type="button" id="sendEmailCode" class="btn btn-info" autocomplete="off"
                           data-loading-text="发送中...">${i18n.getMessage("theme.default.user.settings.12")}</button>
@@ -86,7 +86,7 @@
             <div class="form-group row">
               <label for="code" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.13")}</label>
               <div class="col-sm-10">
-                <input type="text" name="code" id="code" class="form-control" placeholder="验证码"/>
+                <input type="text" name="code" id="code" class="form-control" placeholder="${i18n.getMessage("theme.default.user.settings.13")}"/>
               </div>
             </div>
             <div class="form-group row">
@@ -123,13 +123,13 @@
             <div class="form-group row">
               <label for="oldPassword" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.19")}</label>
               <div class="col-sm-10">
-                <input type="password" name="oldPassword" id="oldPassword" class="form-control" placeholder="旧密码"/>
+                <input type="password" name="oldPassword" id="oldPassword" class="form-control" placeholder="${i18n.getMessage("theme.default.user.settings.19")}"/>
               </div>
             </div>
             <div class="form-group row">
               <label for="newPassword" class="col-sm-2 control-label">${i18n.getMessage("theme.default.user.settings.20")}</label>
               <div class="col-sm-10">
-                <input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="新密码"/>
+                <input type="password" name="newPassword" id="newPassword" class="form-control" placeholder="${i18n.getMessage("theme.default.user.settings.20")}"/>
               </div>
             </div>
             <div class="form-group row">
@@ -171,7 +171,7 @@
           }),
           success: function (data) {
             if (data.code === 200) {
-              suc("更新个人资料成功");
+              suc("${i18n.getMessage('theme.default.user.settings.22')}");
               setTimeout(function () {
                 window.location.reload();
               }, 700);
@@ -202,7 +202,7 @@
           contentType: false,
           success: function (data) {
             if (data.code === 200) {
-              suc("修改头像成功");
+              suc("${i18n.getMessage('theme.default.user.settings.23')}");
               $.each($(".avatar "), function (i, v) {
                 $(v).attr("src", data.detail);
               })
@@ -227,7 +227,7 @@
           },
           success: function (data) {
             if (data.code === 200) {
-              suc("发送成功");
+              suc("${i18n.getMessage('theme.default.user.settings.24')}");
             } else {
               err(data.description);
             }
@@ -254,7 +254,7 @@
           },
           success: function (data) {
             if (data.code === 200) {
-              suc("发送成功");
+              suc("${i18n.getMessage('theme.default.user.settings.24')}");
             } else {
               err(data.description);
             }
@@ -281,7 +281,7 @@
           }),
           success: function (data) {
             if (data.code === 200) {
-              suc("更改成功");
+              suc("${i18n.getMessage('theme.default.user.settings.25')}");
               setTimeout(function () {
                 window.location.reload();
               }, 700);
@@ -297,11 +297,11 @@
         var oldPassword = $("#oldPassword").val();
         var newPassword = $("#newPassword").val();
         if (!oldPassword) {
-          err("请输入旧密码");
+          err("${i18n.getMessage('theme.default.user.settings.26')}");
           return;
         }
         if (!newPassword) {
-          err("请输入新密码");
+          err("${i18n.getMessage('theme.default.user.settings.27')}");
           return;
         }
         $.ajax({
@@ -320,7 +320,7 @@
           }),
           success: function (data) {
             if (data.code === 200) {
-              suc("修改密码成功");
+              suc("${i18n.getMessage('theme.default.user.settings.28')}");
             } else {
               err(data.description);
             }

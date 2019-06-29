@@ -82,7 +82,7 @@
           </span>
             </div>
             <input type="hidden" name="commentId" id="commentId" value=""/>
-            <textarea name="content" id="content" class="form-control" placeholder="添加一条评论，支持Markdown语法"></textarea>
+            <textarea name="content" id="content" class="form-control" placeholder="${i18n.getMessage("theme.default.topic.detail.14")}"></textarea>
             <div class="card-body">
               <button id="comment_btn" class="btn btn-sm btn-info">
                 <span class="glyphicon glyphicon-send"></span> ${i18n.getMessage("theme.default.topic.detail.13")}
@@ -127,7 +127,7 @@
       $("#comment_btn").click(function () {
         var content = window.editor.getDoc().getValue();
         if (!content) {
-          err("请输入评论内容");
+          err("${i18n.getMessage('theme.default.topic.detail.15')}");
           return;
         }
         var _this = this;
@@ -149,7 +149,7 @@
           },
           success: function (data) {
             if (data.code === 200) {
-              suc("评论成功");
+              suc("${i18n.getMessage('theme.default.topic.detail.16')}");
               setTimeout(function () {
                 window.location.reload();
               }, 700);
@@ -166,9 +166,9 @@
         var text = $(_this).text();
         var collectCount = $("#collectCount").text();
         var type = '';
-        if (text === "加入收藏") {
+        if (text === "${i18n.getMessage('theme.default.topic.detail.8')}") {
           type = 'post';
-        } else if (text === "取消收藏") {
+        } else if (text === "${i18n.getMessage('theme.default.topic.detail.7')}") {
           type = 'delete';
         }
         $.ajax({
@@ -183,13 +183,13 @@
           },
           success: function (data) {
             if (data.code === 200) {
-              if (text === "加入收藏") {
-                suc("收藏成功");
-                $(_this).text("取消收藏");
+              if (text === "${i18n.getMessage('theme.default.topic.detail.8')}") {
+                suc("${i18n.getMessage('theme.default.topic.detail.17')}");
+                $(_this).text("${i18n.getMessage('theme.default.topic.detail.7')}");
                 $("#collectCount").text(parseInt(collectCount) + 1);
-              } else if (text === "取消收藏") {
-                suc("取消收藏成功");
-                $(_this).text("加入收藏");
+              } else if (text === "${i18n.getMessage('theme.default.topic.detail.7')}") {
+                suc("${i18n.getMessage('theme.default.topic.detail.18')}");
+                $(_this).text("${i18n.getMessage('theme.default.topic.detail.8')}");
                 $("#collectCount").text(parseInt(collectCount) - 1);
               }
             } else {
@@ -200,7 +200,7 @@
       });
       // 删除话题
       $("#deleteTopic").click(function () {
-        if (confirm("确定要删除吗？这会清空跟这个话题所有相关的数据，再考虑考虑呗！！")) {
+        if (confirm("${i18n.getMessage('theme.default.topic.detail.19')}")) {
           $.ajax({
             url: '/api/topic/${topic.id}',
             type: 'delete',
@@ -214,7 +214,7 @@
             data: JSON.stringify({token: '${_user.token}'}),
             success: function (data) {
               if (data.code === 200) {
-                suc("删除成功");
+                suc("${i18n.getMessage('theme.default.topic.detail.20')}");
                 setTimeout(function () {
                   window.location.href = "/";
                 }, 700);
@@ -243,11 +243,11 @@
           if (data.code === 200) {
             var voteTopicIcon = $("#vote_topic_icon_" + id);
             if (voteTopicIcon.hasClass("fa-thumbs-up")) {
-              suc("取消点赞成功");
+              suc("${i18n.getMessage('theme.default.topic.detail.21')}");
               voteTopicIcon.removeClass("fa-thumbs-up");
               voteTopicIcon.addClass("fa-thumbs-o-up");
             } else {
-              suc("点赞成功");
+              suc("${i18n.getMessage('theme.default.topic.detail.22')}");
               voteTopicIcon.addClass("fa-thumbs-up");
               voteTopicIcon.removeClass("fa-thumbs-o-up");
             }
@@ -261,7 +261,7 @@
 
     // 删除评论
     function deleteComment(id) {
-      if (confirm("确定要删除这个评论吗？删了就没有了哦！")) {
+      if (confirm("${i18n.getMessage('theme.default.topic.detail.23')}")) {
         $.ajax({
           url: '/api/comment/' + id,
           cache: false,
@@ -274,7 +274,7 @@
           },
           success: function (data) {
             if (data.code === 200) {
-              suc("删除成功");
+              suc("${i18n.getMessage('theme.default.topic.detail.20')}");
               setTimeout(function () {
                 window.location.reload();
               }, 700);

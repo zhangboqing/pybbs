@@ -30,7 +30,7 @@
       },
       success: function (data) {
         if (data.code === 200) {
-          suc("刷新token成功");
+          suc("${i18n.getMessage('theme.default.components.token.3')}");
           $("#qrcode").html("");
           $("#qrcode").qrcode({
             width: 180,
@@ -40,7 +40,7 @@
           $("#userToken").text(data.detail);
           token = data.detail;
         } else {
-          err("刷新token失败");
+          err("${i18n.getMessage('theme.default.components.token.4')}");
         }
       }
     })
