@@ -50,7 +50,10 @@ public class IndexController extends BaseController {
   // 首页
   @GetMapping({"/", "/index", "/index.html"})
   public String index(@RequestParam(defaultValue = "all") String tab, @RequestParam(defaultValue = "1") Integer
-      pageNo, Boolean active, Model model) {
+      pageNo, Boolean active, Model model,HttpSession session) {
+    //英语环境
+    session.setAttribute(SessionLocaleResolver.LOCALE_SESSION_ATTRIBUTE_NAME, Locale.US);
+
     model.addAttribute("tab", tab);
     model.addAttribute("active", active);
     model.addAttribute("pageNo", pageNo);

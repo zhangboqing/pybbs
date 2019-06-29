@@ -44,7 +44,8 @@ public class IndexApiController extends BaseApiController {
   // 首页接口
   @GetMapping({"/", "/index"})
   public Result index(@RequestParam(defaultValue = "1") Integer pageNo, @RequestParam(defaultValue = "all") String
-      tab) {
+      tab, HttpSession session) {
+
     MyPage<Map<String, Object>> page = topicService.selectAll(pageNo, tab);
     for (Map<String, Object> map : page.getRecords()) {
       Object content = map.get("content");
