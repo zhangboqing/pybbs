@@ -1,5 +1,5 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="登录" page_tab="login">
+<@html page_title="${i18n.getMessage('theme.default.login.1')}" page_tab="login">
   <div class="row">
     <div class="col-md-3 d-none d-md-block"></div>
     <div class="col-md-6">

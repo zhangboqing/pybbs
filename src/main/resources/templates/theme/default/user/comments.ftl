@@ -1,5 +1,5 @@
 <#include "../layout/layout.ftl"/>
-<@html page_title="${username}评论的话题" page_tab="">
+<@html page_title="${username} ${i18n.getMessage('theme.default.user.comments.1')}" page_tab="">
 <div class="row">
   <div class="col-md-9">
     <#include "../components/user_comments.ftl"/>

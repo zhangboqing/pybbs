@@ -1,5 +1,5 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="注册" page_tab="register">
+<@html page_title="${i18n.getMessage('theme.default.register.1')}" page_tab="register">
   <div class="row">
     <div class="col-md-3 d-none d-md-block"></div>
     <div class="col-md-6">

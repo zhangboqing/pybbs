@@ -1,5 +1,5 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="通知" page_tab="notification">
+<@html page_title=" ${i18n.getMessage('theme.default.notifications.4')}" page_tab="notification">
   <div class="row">
     <div class="col-md-9">
       <div class="card">

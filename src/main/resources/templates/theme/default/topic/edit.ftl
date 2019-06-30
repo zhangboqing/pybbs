@@ -1,5 +1,5 @@
 <#include "../layout/layout.ftl"/>
-<@html page_title="编辑话题" page_tab="">
+<@html page_title="${i18n.getMessage('theme.default.topic.edit.1')}" page_tab="">
   <div class="row">
     <div class="col-md-9">
       <div class="card">

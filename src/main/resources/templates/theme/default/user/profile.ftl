@@ -1,5 +1,5 @@
 <#include "../layout/layout.ftl"/>
-<@html page_title=user.username + " 的个人主页" page_tab="user">
+<@html page_title=user.username + " ${i18n.getMessage('theme.default.user.profile.4')}" page_tab="user">
   <div class="row">
     <div class="col-md-9">
       <div class="card">

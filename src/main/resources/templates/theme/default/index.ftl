@@ -1,10 +1,10 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="首页" page_tab="index">
+<@html page_title="${i18n.getMessage('theme.default.index.6')}" page_tab="index">
     <#if active?? && active>
       <div class="alert alert-success">
         <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span
               aria-hidden="true">&times;</span></button>
-        <strong>激活成功</strong>
+        <strong>${i18n.getMessage("theme.default.index.7")}</strong>
       </div>
     </#if>
   <div class="row">

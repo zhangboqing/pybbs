@@ -1,5 +1,5 @@
 <#include "layout/layout.ftl"/>
-<@html page_title="首页" page_tab="index">
+<@html page_title="${i18n.getMessage('theme.default.search.2')}" page_tab="index">
   <div class="row">
     <div class="col-md-9">
       <div class="card">

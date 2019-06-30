@@ -1,5 +1,5 @@
 <#include "../layout/layout.ftl"/>
-<@html page_title="设置" page_tab="settings">
+<@html page_title="${i18n.getMessage('theme.default.user.settings.4')}" page_tab="settings">
   <div class="row">
     <div class="col-md-9">
         <#if !user.active>
