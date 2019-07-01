@@ -14,8 +14,11 @@ spring:
   messages:
     basename: i18n/message
 
-#  resources:
+  resources:
 #    static-locations: ["classpath:static/", "file:./static/"]
+#    static-locations: ["file:/Users/zhangboqing/data"]
+#  mvc:
+#    static-path-pattern: "/**"
 
 # 配置mapper.xml位置，这个位置可以在pom.xml里配置
 mybatis-plus:
